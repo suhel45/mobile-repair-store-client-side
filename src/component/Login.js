@@ -3,16 +3,19 @@
 import React, { useContext } from "react";
 import ListGroup from 'react-bootstrap/ListGroup';
 import { FaGoogle } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "./UserContext";
 
 const Login = () => {
       const {userLogin} = useContext(AuthContext);
+      const navigate = useNavigate();
 
     const handleGoogle = ()=>{
         userLogin()
         .then(result=>{
             const user = result.user;
             console.log(user)
+            navigate('/home');
         })
         .catch(e=>console.log(e))
     }
