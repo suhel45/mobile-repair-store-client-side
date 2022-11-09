@@ -1,12 +1,15 @@
 /** @format */
 
-import React from "react";
+import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import { AuthContext } from "./UserContext";
 
 const Header = () => {
+  const {user} = useContext(AuthContext);
+  console.log(user)
   return (
     <div className="mb-5">
       <Navbar bg="light" expand="lg" sticky="top">
@@ -20,6 +23,15 @@ const Header = () => {
               <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
               <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
               <Nav.Link as={Link} to="/login">Login</Nav.Link>
+              {
+                user?.uid && 
+                <>
+                <Nav.Link as={Link} to="/login">My Review</Nav.Link>
+                <Nav.Link as={Link} to="/login">Add Review</Nav.Link>
+                <Nav.Link as={Link} to="/login">LogOut</Nav.Link>
+                </>
+
+              }
             </Nav>
           </Navbar.Collapse>
         </Container>
