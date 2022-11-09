@@ -6,13 +6,15 @@ import { AuthContext } from './UserContext';
 const ShowAllDetails = () => {
     const {datas} = useContext(AuthContext);
     return (
-        <div className="row container ms-5 me-0">
-           {
-            datas.map(data=><ShowDetails
-            key={data._id}
-            data={data}
-            ></ShowDetails>)
-           }
+        <div className="container">
+            <div className="row">
+   {
+    datas.map(data=><ShowDetails
+    key={data._id}
+    data={data}
+    ></ShowDetails>)
+   }
+</div>
         </div>
     );
 };

@@ -19,10 +19,6 @@ function App() {
         },
         {
           path:'/service',
-          element:<Services></Services>
-        },
-        {
-          path:'/all',
           element:<ShowAllDetails></ShowAllDetails>
         },
         {

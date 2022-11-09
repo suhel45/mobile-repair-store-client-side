@@ -8,16 +8,18 @@ const Services = () => {
     const{ datas} = useContext(AuthContext);
     console.log(datas)
     return (
-        <div className="row container ms-5 me-0">
-            {
-                datas.slice(0,3).map((data,index)=><ServiceDetails
-                key={index}
-                data={data}
-                ></ServiceDetails>)
-            }
-            <Link to="/all">
-            <Button className='mt-3' variant="success">See all</Button>{' '}
-            </Link>
+        <div className="container">
+             <div className="row ">
+     {
+         datas.slice(0,3).map((data,index)=><ServiceDetails
+         key={index}
+         data={data}
+         ></ServiceDetails>)
+     }
+     <Link to="/service">
+     <Button className='mt-3' variant="success">See all</Button>{' '}
+     </Link>
+ </div>
         </div>
     );
 };
