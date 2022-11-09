@@ -19,12 +19,10 @@ function App() {
         },
         {
           path:'/service',
-          loader:()=>fetch('http://localhost:5000/service'),
           element:<Services></Services>
         },
         {
           path:'/all',
-          loader:()=>fetch('http://localhost:5000/service'),
           element:<ShowAllDetails></ShowAllDetails>
         },
         {

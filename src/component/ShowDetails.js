@@ -14,6 +14,8 @@ const ShowDetails = ({data}) => {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
+            <h3 className='' >price:<span style={{color:"blue"}}>{price}</span></h3>
+            <Button variant="primary">view Details</Button>
           </Card.Body>
         </Card>
       </div>

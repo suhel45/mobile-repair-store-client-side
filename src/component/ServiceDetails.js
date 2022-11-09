@@ -16,6 +16,7 @@ const ServiceDetails = ({data}) => {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </Card.Text>
+          <Button variant="primary">view Details</Button>
         </Card.Body>
       </Card>
     </div>

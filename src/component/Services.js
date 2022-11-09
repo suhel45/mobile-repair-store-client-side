@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import ServiceDetails from './ServiceDetails';
+import { AuthContext } from './UserContext';
 
 const Services = () => {
-    const datas = useLoaderData();
+    const{ datas} = useContext(AuthContext);
     console.log(datas)
     return (
         <div className="row container ms-5 me-0">
