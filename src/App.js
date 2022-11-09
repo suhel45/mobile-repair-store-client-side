@@ -3,6 +3,7 @@ import './App.css';
 import Blog from './component/Blog';
 import Contact from './component/Contact';
 import Home from './component/Home';
+import Login from './component/Login';
 import Services from './component/Services';
 import ServicesDetailsPage from './component/ServicesDetailsPage';
 import ShowAllDetails from './component/ShowAllDetails';
@@ -34,7 +35,11 @@ function App() {
         {
           path:'/contact',
           element:<Contact></Contact>
-        }
+        },
+        {
+          path:'/login',
+          element:<Login></Login>
+        },
       ]
     }
   ])
