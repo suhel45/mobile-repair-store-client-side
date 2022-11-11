@@ -14,7 +14,7 @@ const ServicesDetailsPage = () => {
   const {_id, name, img, price, description } = data;
   console.log(data);
 
-
+  console.log(user)
   useEffect(()=>{
     fetch('http://localhost:5000/users')
     .then(res=>res.json())
@@ -82,8 +82,9 @@ const ServicesDetailsPage = () => {
               <input type="text" name="name" className="mb-1 " style={{height:"4rem"}} />
               <button type="submit">Add</button>
             </form>
-              <div>
-                
+              <div className="d-flex ms-1">
+                <img className="rounded-pill w-25 h-25" src={user?.photoURL} alt="" />
+                <p>{comt.cmt}</p>
               </div>
           </div>
       </div>
