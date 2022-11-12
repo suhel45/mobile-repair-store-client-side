@@ -1,10 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import AddService from './component/AddService';
 import Blog from './component/Blog';
 import Contact from './component/Contact';
 import Home from './component/Home';
 import Login from './component/Login';
 import MyReview from './component/MyReview';
+import PrivateRoute from './component/PrivateRoute';
 import Services from './component/Services';
 import ServicesDetailsPage from './component/ServicesDetailsPage';
 import ShowAllDetails from './component/ShowAllDetails';
@@ -44,7 +46,11 @@ function App() {
         {
           path:'/review',
           loader:()=>fetch('http://localhost:5000/comment'),
-          element:<MyReview></MyReview>
+          element:<PrivateRoute><MyReview></MyReview></PrivateRoute>
+        },
+        {
+          path:'/addService',
+          element:<PrivateRoute><AddService></AddService></PrivateRoute>
         }
       ]
     }

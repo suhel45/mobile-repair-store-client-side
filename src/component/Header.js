@@ -27,7 +27,7 @@ const Header = () => {
                 user?.uid && 
                 <>
                 <Nav.Link as={Link} to="/review">My Review</Nav.Link>
-                <Nav.Link as={Link} to="/login">Add Review</Nav.Link>
+                <Nav.Link as={Link} to="/addService">Add Service</Nav.Link>
                 <Nav.Link as={Link} to="/login">LogOut</Nav.Link>
                 </>
 
