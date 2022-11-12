@@ -4,6 +4,7 @@ import Blog from './component/Blog';
 import Contact from './component/Contact';
 import Home from './component/Home';
 import Login from './component/Login';
+import MyReview from './component/MyReview';
 import Services from './component/Services';
 import ServicesDetailsPage from './component/ServicesDetailsPage';
 import ShowAllDetails from './component/ShowAllDetails';
@@ -40,6 +41,11 @@ function App() {
           path:'/login',
           element:<Login></Login>
         },
+        {
+          path:'/review',
+          loader:()=>fetch('http://localhost:5000/comment'),
+          element:<MyReview></MyReview>
+        }
       ]
     }
   ])
