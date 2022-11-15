@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
+import UseTitle from './Hook/UseTitle';
 import ServiceDetails from './ServiceDetails';
 import { AuthContext } from './UserContext';
 

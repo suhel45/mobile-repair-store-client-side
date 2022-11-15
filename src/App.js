@@ -7,6 +7,7 @@ import Home from './component/Home';
 import Login from './component/Login';
 import MyReview from './component/MyReview';
 import PrivateRoute from './component/PrivateRoute';
+import Register from './component/Register';
 import Services from './component/Services';
 import ServicesDetailsPage from './component/ServicesDetailsPage';
 import ShowAllDetails from './component/ShowAllDetails';
@@ -40,12 +41,15 @@ function App() {
           element:<Contact></Contact>
         },
         {
+          path:'/register',
+          element:<Register></Register>
+        },
+        {
           path:'/login',
           element:<Login></Login>
         },
         {
           path:'/review',
-          loader:()=>fetch('http://localhost:5000/comment'),
           element:<PrivateRoute><MyReview></MyReview></PrivateRoute>
         },
         {

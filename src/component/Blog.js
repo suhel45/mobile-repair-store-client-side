@@ -2,8 +2,10 @@
 
 import React from "react";
 import Accordion from "react-bootstrap/Accordion";
+import UseTitle from "./Hook/UseTitle";
 
 const Blog = () => {
+  UseTitle('Blog')
   return (
     <div className="container">
       <Accordion>

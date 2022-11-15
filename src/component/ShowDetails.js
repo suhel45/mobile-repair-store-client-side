@@ -4,13 +4,21 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+import UseTitle from "./Hook/UseTitle";
 
 const ShowDetails = ({ data }) => {
+  UseTitle('Services')
   const { _id,name, img, price, description } = data;
   return (
     <div className="col col-lg-4 mt-3">
       <Card style={{ width: "22rem", height: "30rem" }}>
-        <Card.Img variant="top" src={img} alt="" style={{ height: "12rem" }} />
+      <PhotoProvider>
+      <PhotoView src={img}>
+      <Card.Img variant="top" src={img} alt="" style={{ height: "12rem" }} />
+      </PhotoView>
+      </PhotoProvider>
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>

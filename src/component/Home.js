@@ -1,8 +1,10 @@
 import React from 'react';
+import UseTitle from './Hook/UseTitle';
 import Services from './Services';
 import Slider from './Slider';
 
 const Home = () => {
+    UseTitle('Home')
     return (
         <div>
             <Slider></Slider>
