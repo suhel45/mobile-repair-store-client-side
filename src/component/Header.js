@@ -8,8 +8,15 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "./UserContext";
 
 const Header = () => {
-  const {user} = useContext(AuthContext);
+  const {user,logOut} = useContext(AuthContext);
   console.log(user)
+
+
+  const handleLogOut = ()=>{
+        logOut()
+        .then(()=>{ })
+        .catch(e=>console.log(e))
+  }
   return (
     <div className="mb-5 sticky-top">
       <Navbar bg="light" expand="lg" sticky="top">
@@ -29,7 +36,7 @@ const Header = () => {
                 <>
                 <Nav.Link as={Link} to="/review">My Review</Nav.Link>
                 <Nav.Link as={Link} to="/addService">Add Service</Nav.Link>
-                <Nav.Link as={Link} to="/login">LogOut</Nav.Link>
+                <Nav.Link as={Link} action onClick={handleLogOut}>LogOut</Nav.Link>
                 </>
 
               }

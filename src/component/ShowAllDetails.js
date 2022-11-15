@@ -5,6 +5,7 @@ import { AuthContext } from './UserContext';
 
 const ShowAllDetails = () => {
     const {datas} = useContext(AuthContext);
+    console.log(datas)
     return (
         <div className="container">
             <div className="row">

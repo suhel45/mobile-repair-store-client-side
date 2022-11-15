@@ -16,7 +16,7 @@ const ServicesDetailsPage = () => {
   const data = useLoaderData();
   const { _id, name, img, price, description } = data;
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://mobile-repair-server-side-suhel45.vercel.app/users")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, [users]);
@@ -27,7 +27,7 @@ const ServicesDetailsPage = () => {
     const id = _id;
     const comment = { cmt, id, name };
     form.reset();
-    fetch("http://localhost:5000/users", {
+    fetch("https://mobile-repair-server-side-suhel45.vercel.app/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const ServicesDetailsPage = () => {
       .catch((e) => console.log(e));
   };
   useEffect(() => {
-    fetch(`http://localhost:5000/comment/${_id}`)
+    fetch(`https://mobile-repair-server-side-suhel45.vercel.app/comment/${_id}`)
       .then((res) => res.json())
       .then((data) => setComt(data));
   }, [!loading,user?.email,users]);

@@ -29,7 +29,7 @@ function App() {
         },
         {
           path:'/service/:id',
-          loader:({params})=>fetch(`http://localhost:5000/service/${params.id}`),
+          loader:({params})=>fetch(`https://mobile-repair-server-side-suhel45.vercel.app/service/${params.id}`),
           element:<ServicesDetailsPage></ServicesDetailsPage>
         },
         {

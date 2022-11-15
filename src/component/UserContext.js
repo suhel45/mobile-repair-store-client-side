@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { createContext, useEffect, useState } from "react";
-import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup} from 'firebase/auth'
+import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from 'firebase/auth'
 import app from "./firebase/Firebase.config";
 
 
@@ -27,6 +27,10 @@ const UserContext = ({ children }) => {
     setLoading(false);
     return signInWithEmailAndPassword(auth, email, password);
   };
+
+  const logOut = ()=>{
+    return signOut(auth)
+  }
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser === null || currentUser.emailVerified) {
@@ -38,11 +42,11 @@ const UserContext = ({ children }) => {
     };
   }, []);
   useEffect(() => {
-    fetch("http://localhost:5000/service")
+    fetch("https://mobile-repair-server-side-suhel45.vercel.app/service")
       .then((res) => res.json())
       .then((data) => setDatas(data));
   }, []);
-  const authInfo = { datas, userLogin, user,createUser,signIn,loading };
+  const authInfo = { datas, userLogin, user,createUser,signIn,loading,logOut };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

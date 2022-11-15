@@ -10,13 +10,16 @@ const MyReview = () => {
   const [data,setData] = useState([]);
 
   useEffect(()=>{
-      fetch('http://localhost:5000/comment',{
+      fetch('https://mobile-repair-server-side-suhel45.vercel.app/comment',{
         headers:{
-          authorizatio:`Bearer ${localStorage.getItem('secret-token')}`
+          authorization:`Bearer ${localStorage.getItem('secret-token')}`
         }
       })
       .then(res=>res.json())
-      .then(da=>setData(da))
+      .then(da=>{
+        if(!da.message){setData(da)}
+      })
+      .catch(e=>console.log(e))
   },[])
   const len = data.length;
   console.log(data);
